@@ -19,14 +19,14 @@ window.onload = function() {
 function initLists() {
 // consider making the location and parkType lists a singular select and populating it based on the filter selected instead of two separate selects that are displayed when their filter is chosen
 
-    let locationOption = new Option("Select a location", "select");
-    locationsList.appendChild(locationOption);
+    let locationOption = new Option("Select a location", "select"); 
+    locationsList.appendChild(locationOption); // adds "select" option to dropdown
     for (let location of locationsArray) {
         let option = new Option(location, location);
         locationsList.appendChild(option);
     }
-    let parkTypeOption = new Option("Select a park type", "select");
-    parkTypeList.appendChild(parkTypeOption);
+    let parkTypeOption = new Option("Select a park type", "select"); 
+    parkTypeList.appendChild(parkTypeOption); // adds "select" option to dropdown
     for (let parkType of parkTypesArray) {
         let option = new Option(parkType, parkType);
         parkTypeList.appendChild(option);
@@ -48,14 +48,15 @@ function displayList() {
     else {
         locationsList.style.display = "none"
         parkTypeList.style.display = "none"
+        parkInfoPara.style.display = "none"
     }
 }
 
 // populates parkList based on location chosen
 function parksByLocation() {
     parkList.length = 0;
-    let parkOption = new Option("Select a park", "select");
-    parkList.appendChild(parkOption);
+    let parkOption = new Option("Select a park", "select"); 
+    parkList.appendChild(parkOption); // adds "select" option to dropdown
     for (let park of nationalParksArray) {
         if (locationsList.value == park.State) {
             let option = new Option(park.LocationName, park.LocationID);
@@ -67,14 +68,15 @@ function parksByLocation() {
     }
     else {
         parkList.style.display = "none"
+        parkInfoPara.style.display = "none"
     }
 }
 
 // populates parkList based on parkType chosen
 function parksByType() {
     parkList.length = 0;
-    let parkOption = new Option("Select a park", "select");
-    parkList.appendChild(parkOption);
+    let parkOption = new Option("Select a park", "select"); 
+    parkList.appendChild(parkOption); // adds "select" option to dropdown
     for (let park of nationalParksArray) {
         if (park.LocationName.indexOf(parkTypeList.value) != -1) {
             let option = new Option(park.LocationName, park.LocationID);
@@ -86,9 +88,11 @@ function parksByType() {
     }
     else {
         parkList.style.display = "none"
+        parkInfoPara.style.display = "none"
     }
 }
 
+// displays park info when park is selected
 function displayParkInfo() {
     for (let park of nationalParksArray) {
         if (parkList.value == park.LocationID) {
