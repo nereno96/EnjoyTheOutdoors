@@ -18,7 +18,7 @@ function initMountainsList() {
 }
 
 function displayInfo() {
-    
+    mountainInfo.innerHTML = "";
     for (let mountain of mountainsArray) {
         if (mountainsList.value == "select") {
             mountainInfo.innerHTML = "";
