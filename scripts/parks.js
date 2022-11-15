@@ -73,7 +73,7 @@ function parksByType() {
 function displayParkInfo() {
     for (let park of nationalParksArray) {
         if (parkList.value == park.LocationID) {
-            parkInfoPara.innerHTML = park.LocationName + " (" + park.LocationID + ") is located at " + park.Address + " in " + park.City + ", " + park.State + " ";
+            parkInfoPara.innerHTML = "<span class='fw-bold'>Mailing Address: </span><br>" + park.LocationName + " (" + park.LocationID + ")  <br>" + park.Address + "<br>" + park.City + ", " + park.State + " " + park.ZipCode + "<br><span class='fw-bold'>Phone Number:</span> " + park.Phone + "<br><span class='fw-bold'>Fax Number:</span> " + park.Fax + "<br><span class='fw-bold'>Coordinates:</span> " + park.Latitude + ", " + park.Longitude;
         }
     }
 }
