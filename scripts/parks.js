@@ -106,3 +106,5 @@ function displayParkInfo() {
         parkInfoPara.style.display = "none"
     }
 }
+
+// consider using .visually-hidden class instead of style.display.none to hide and unhide elements for acessibilty purposes in the future
