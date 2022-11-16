@@ -6,6 +6,7 @@ const parkTypeList = document.getElementById("parkTypeList");
 const parkList = document.getElementById("parkList");
 const parkInfoPara = document.getElementById("parkInfoPara");
 const parkInfoJumbo = document.getElementById("parkInfoJumbo");
+const visitBtn = document.getElementById("visitBtn");
 
 
 window.onload = init; 
@@ -116,7 +117,14 @@ function parksByType() {
 function displayParkInfo() {
     for (let park of nationalParksArray) {
         if (parkList.value == park.LocationID) {
-            parkInfoPara.innerHTML = "<span class='fw-bold'>Mailing Address: </span><br>" + park.LocationName + " (" + park.LocationID + ")  <br>" + park.Address + "<br>" + park.City + ", " + park.State + " " + park.ZipCode + "<br><span class='fw-bold'>Phone Number:</span> " + park.Phone + "<br><span class='fw-bold'>Fax Number:</span> " + park.Fax + "<br><span class='fw-bold'>Coordinates:</span> " + park.Latitude + ", " + park.Longitude;
+            if (park.Visit == undefined) {
+                parkInfoPara.innerHTML = "<span class='fw-bold'>Mailing Address: </span><br>" + park.LocationName + " (" + park.LocationID + ")  <br>" + park.Address + "<br>" + park.City + ", " + park.State + " " + park.ZipCode + "<br><span class='fw-bold'>Phone Number:</span> " + park.Phone + "<br><span class='fw-bold'>Fax Number:</span> " + park.Fax + "<br><span class='fw-bold'>Coordinates:</span> " + park.Latitude + ", " + park.Longitude;
+                visitBtn.style.display = "none";
+            }
+            else if (park.Visit != undefined) {
+                parkInfoPara.innerHTML = "<span class='fw-bold'>Mailing Address: </span><br>" + park.LocationName + " (" + park.LocationID + ")  <br>" + park.Address + "<br>" + park.City + ", " + park.State + " " + park.ZipCode + "<br><span class='fw-bold'>Phone Number:</span> " + park.Phone + "<br><span class='fw-bold'>Fax Number:</span> " + park.Fax + "<br><span class='fw-bold'>Coordinates:</span> " + park.Latitude + ", " + park.Longitude;
+                visitBtn.style.display = "block";
+            }
         }
     }
     if(parkList.value != "select") {
