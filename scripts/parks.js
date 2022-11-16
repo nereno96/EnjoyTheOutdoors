@@ -16,6 +16,7 @@ function init() {
     locationsList.onchange = parksByLocation;
     parkTypeList.onchange = parksByType;
     parkList.onchange = displayParkInfo;
+    visitBtn.onclick = openLink;
 }
 
 // initializes the location list
@@ -148,6 +149,8 @@ function displayParkInfo() {
             else if (park.Visit != undefined) {
                 parkInfoPara.innerHTML = "<span class='fw-bold'>Mailing Address: </span><br>" + park.LocationName + " (" + park.LocationID + ")  <br>" + park.Address + "<br>" + park.City + ", " + park.State + " " + park.ZipCode + "<br><span class='fw-bold'>Phone Number:</span> " + park.Phone + "<br><span class='fw-bold'>Fax Number:</span> " + park.Fax + "<br><span class='fw-bold'>Coordinates:</span> " + park.Latitude + ", " + park.Longitude;
                 visitBtn.style.display = "block";
+                visitBtn.href = park.Visit;
+                visitBtn.target = "_blank";
             }
         }
     }
