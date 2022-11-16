@@ -31,7 +31,7 @@ function displayInfo() {
         }
         else if (mountain.name == mountainsList.value) {
             mountainInfoCardTitle.innerText = mountain.name;
-            mountainInfo.innerHTML += mountain.desc;
+            mountainInfo.innerHTML += "<span class='fw-bold'>Description: </span>" + mountain.desc + "<br><span class='fw-bold'>Elevation: </span>" + mountain.elevation + "<br><span class='fw-bold'>Coordinates: </span>" + mountain.coords.lat + ", " + mountain.coords.lng;
             mountainInfoCardImg.src = "images/" + mountain.img;
             mountainInfoCard.style.display = "block";
             break;
