@@ -5,6 +5,7 @@ const locationsList = document.getElementById("locationsList");
 const parkTypeList = document.getElementById("parkTypeList");
 const parkList = document.getElementById("parkList");
 const parkInfoPara = document.getElementById("parkInfoPara");
+const parkInfoJumbo = document.getElementById("parkInfoJumbo");
 
 
 window.onload = function() {
@@ -17,7 +18,7 @@ window.onload = function() {
 // initializes the location list
 function initLocationsList() {
     locationsList.length = 0;
-    parkInfoPara.style.display = "none"
+    parkInfoJumbo.style.display = "none"
 
     let locationOption = new Option("Select a location", "select"); // creates select option for dropdown
     locationsList.appendChild(locationOption); // adds "select" option to dropdown
@@ -31,7 +32,7 @@ function initLocationsList() {
 // initializes the park type list
 function initParkTypeList() {
     parkTypeList.length = 0;
-    parkInfoPara.style.display = "none"
+    parkInfoJumbo.style.display = "none"
 
     let parkTypeOption = new Option("Select a park type", "select"); // creates select option for dropdown
     parkTypeList.appendChild(parkTypeOption); // adds "select" option to dropdown
@@ -59,14 +60,14 @@ function displayList() {
     else {
         locationsList.style.display = "none"
         parkTypeList.style.display = "none"
-        parkInfoPara.style.display = "none"
+        parkInfoJumbo.style.display = "none"
     }
 }
 
 // populates parkList based on location chosen
 function parksByLocation() {
     parkList.length = 0;
-    parkInfoPara.style.display = "none"
+    parkInfoJumbo.style.display = "none"
 
     let parkOption = new Option("Select a park", "select"); // creates select option for dropdown
     parkList.appendChild(parkOption); // adds "select" option to dropdown
@@ -82,14 +83,14 @@ function parksByLocation() {
     }
     else {
         parkList.style.display = "none"
-        parkInfoPara.style.display = "none"
+        parkInfoJumbo.style.display = "none"
     }
 }
 
 // populates parkList based on parkType chosen
 function parksByType() {
     parkList.length = 0;
-    parkInfoPara.style.display = "none"
+    parkInfoJumbo.style.display = "none"
 
     let parkOption = new Option("Select a park", "select"); // creates select option for dropdown
     parkList.appendChild(parkOption); // adds "select" option to dropdown
@@ -105,7 +106,7 @@ function parksByType() {
     }
     else {
         parkList.style.display = "none"
-        parkInfoPara.style.display = "none"
+        parkInfoJumbo.style.display = "none"
     }
 }
 
@@ -117,10 +118,10 @@ function displayParkInfo() {
         }
     }
     if(parkList.value != "select") {
-        parkInfoPara.style.display = "block"
+        parkInfoJumbo.style.display = "block"
     }
     else {
-        parkInfoPara.style.display = "none"
+        parkInfoJumbo.style.display = "none"
     }
 }
 
