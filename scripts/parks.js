@@ -60,6 +60,10 @@ function displayList() {
         initParkTypeList();
         parkTypeList.style.display = "block";
     }
+    else if (filterOptionsList.value == "all") {
+        initNoFilter();
+        parkList.style.display = "block";
+    }
     else {
         locationsList.style.display = "none";
         parkTypeList.style.display = "none";
@@ -103,6 +107,26 @@ function parksByType() {
             let option = new Option(park.LocationName, park.LocationID);
             parkList.appendChild(option);
         }
+    }
+    if(parkTypeList.value != "select") {
+        parkList.style.display = "block";
+    }
+    else {
+        parkList.style.display = "none";
+        parkInfoJumbo.style.display = "none";
+    }
+}
+
+function initNoFilter() {
+    parkList.length = 0;
+    parkInfoJumbo.style.display = "none";
+
+    let parkOption = new Option("Select a park", "select"); // creates select option for dropdown
+    parkList.appendChild(parkOption); // adds "select" option to dropdown
+
+    for (let park of nationalParksArray) {
+            let option = new Option(park.LocationName, park.LocationID);
+            parkList.appendChild(option);
     }
     if(parkTypeList.value != "select") {
         parkList.style.display = "block";
