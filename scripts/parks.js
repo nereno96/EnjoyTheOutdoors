@@ -17,6 +17,7 @@ window.onload = function() {
 // initializes the location list
 function initLocationsList() {
     locationsList.length = 0;
+    parkInfoPara.style.display = "none"
 
     let locationOption = new Option("Select a location", "select"); // creates select option for dropdown
     locationsList.appendChild(locationOption); // adds "select" option to dropdown
@@ -30,6 +31,7 @@ function initLocationsList() {
 // initializes the park type list
 function initParkTypeList() {
     parkTypeList.length = 0;
+    parkInfoPara.style.display = "none"
 
     let parkTypeOption = new Option("Select a park type", "select"); // creates select option for dropdown
     parkTypeList.appendChild(parkTypeOption); // adds "select" option to dropdown
