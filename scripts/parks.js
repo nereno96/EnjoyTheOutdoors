@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const filterOptionsList = document.getElementById("filterOptionsList");
 const locationsList = document.getElementById("locationsList");
@@ -8,7 +8,9 @@ const parkInfoPara = document.getElementById("parkInfoPara");
 const parkInfoJumbo = document.getElementById("parkInfoJumbo");
 
 
-window.onload = function() {
+window.onload = init; 
+
+function init() {
     filterOptionsList.onchange = displayList;
     locationsList.onchange = parksByLocation;
     parkTypeList.onchange = parksByType;
@@ -18,7 +20,7 @@ window.onload = function() {
 // initializes the location list
 function initLocationsList() {
     locationsList.length = 0;
-    parkInfoJumbo.style.display = "none"
+    parkInfoJumbo.style.display = "none";
 
     let locationOption = new Option("Select a location", "select"); // creates select option for dropdown
     locationsList.appendChild(locationOption); // adds "select" option to dropdown
@@ -32,7 +34,7 @@ function initLocationsList() {
 // initializes the park type list
 function initParkTypeList() {
     parkTypeList.length = 0;
-    parkInfoJumbo.style.display = "none"
+    parkInfoJumbo.style.display = "none";
 
     let parkTypeOption = new Option("Select a park type", "select"); // creates select option for dropdown
     parkTypeList.appendChild(parkTypeOption); // adds "select" option to dropdown
@@ -51,23 +53,23 @@ function displayList() {
 
     if (filterOptionsList.value == "location") {
         initLocationsList();
-        locationsList.style.display = "block"
+        locationsList.style.display = "block";
     }
     else if (filterOptionsList.value == "type") {
         initParkTypeList();
-        parkTypeList.style.display = "block"
+        parkTypeList.style.display = "block";
     }
     else {
-        locationsList.style.display = "none"
-        parkTypeList.style.display = "none"
-        parkInfoJumbo.style.display = "none"
+        locationsList.style.display = "none";
+        parkTypeList.style.display = "none";
+        parkInfoJumbo.style.display = "none";
     }
 }
 
 // populates parkList based on location chosen
 function parksByLocation() {
     parkList.length = 0;
-    parkInfoJumbo.style.display = "none"
+    parkInfoJumbo.style.display = "none";
 
     let parkOption = new Option("Select a park", "select"); // creates select option for dropdown
     parkList.appendChild(parkOption); // adds "select" option to dropdown
@@ -79,18 +81,18 @@ function parksByLocation() {
         }
     }
     if(locationsList.value != "select") {
-        parkList.style.display = "block"
+        parkList.style.display = "block";
     }
     else {
-        parkList.style.display = "none"
-        parkInfoJumbo.style.display = "none"
+        parkList.style.display = "none";
+        parkInfoJumbo.style.display = "none";
     }
 }
 
 // populates parkList based on parkType chosen
 function parksByType() {
     parkList.length = 0;
-    parkInfoJumbo.style.display = "none"
+    parkInfoJumbo.style.display = "none";
 
     let parkOption = new Option("Select a park", "select"); // creates select option for dropdown
     parkList.appendChild(parkOption); // adds "select" option to dropdown
@@ -102,11 +104,11 @@ function parksByType() {
         }
     }
     if(parkTypeList.value != "select") {
-        parkList.style.display = "block"
+        parkList.style.display = "block";
     }
     else {
-        parkList.style.display = "none"
-        parkInfoJumbo.style.display = "none"
+        parkList.style.display = "none";
+        parkInfoJumbo.style.display = "none";
     }
 }
 
@@ -118,10 +120,10 @@ function displayParkInfo() {
         }
     }
     if(parkList.value != "select") {
-        parkInfoJumbo.style.display = "block"
+        parkInfoJumbo.style.display = "block";
     }
     else {
-        parkInfoJumbo.style.display = "none"
+        parkInfoJumbo.style.display = "none";
     }
 }
 
