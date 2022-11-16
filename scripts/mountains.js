@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const mountainsList = document.getElementById("mountainsList");
 const mountainInfo = document.getElementById("mountainInfo");
@@ -8,7 +8,9 @@ const mountainInfoCardImg = document.getElementById("mountainInfoCardImg");
 let option = new Option("Select a mountain", "select");
 mountainsList.appendChild(option);
 
-window.onload = function() {
+window.onload = init;
+
+function init() {
     initMountainsList();
     mountainsList.onchange = displayInfo;
 }
@@ -24,14 +26,14 @@ function displayInfo() {
     mountainInfo.innerHTML = "";
     for (let mountain of mountainsArray) {
         if (mountainsList.value == "select") {
-            mountainInfoCard.style.display = "none"
+            mountainInfoCard.style.display = "none";
 
         }
         else if (mountain.name == mountainsList.value) {
             mountainInfoCardTitle.innerText = mountain.name;
             mountainInfo.innerHTML += mountain.desc;
             mountainInfoCardImg.src = "images/" + mountain.img;
-            mountainInfoCard.style.display = "block"
+            mountainInfoCard.style.display = "block";
             break;
         }
     }
