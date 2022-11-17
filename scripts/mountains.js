@@ -22,7 +22,15 @@ function initMountainsList() {
     }
 }
 
+async function getSunsetForMountain(lat, lng){
+    let response = await fetch(
+    `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=today`);
+    let data = await response.json();
+    return data;
+}
+
 function displayInfo() {
+    // let timeInfo = {};
     mountainInfo.innerHTML = "";
     for (let mountain of mountainsArray) {
         if (mountainsList.value == "select") {
@@ -30,8 +38,16 @@ function displayInfo() {
 
         }
         else if (mountain.name == mountainsList.value) {
+                // getSunsetForMountain(mountain.coords.lat, mountain.coords.lng).then(data => {
+                //     console.log(data.results);
+                //     let object = data.results;
+                //     console.log(object);
+                //     timeInfo = object;
+                //     console.log(object[0])
+                // });
+                // console.log(timeInfo);
             mountainInfoCardTitle.innerText = mountain.name;
-            mountainInfo.innerHTML += "<span class='fw-bold'>Description: </span>" + mountain.desc + "<br><span class='fw-bold'>Elevation: </span>" + mountain.elevation + "<br><span class='fw-bold'>Coordinates: </span>" + mountain.coords.lat + ", " + mountain.coords.lng;
+            mountainInfo.innerHTML += "<span class='fw-bold'>Description: </span>" + mountain.desc + "<br><span class='fw-bold'>Elevation: </span>" + mountain.elevation + "<br><span class='fw-bold'>Coordinates: </span>" + mountain.coords.lat + ", " + mountain.coords.lng/* + "<br><span class='fw-bold'>Sunrise Time: </span>" + timeInfo.sunrise +  "<br><span class='fw-bold'>Sunset Time: </span>" + timeInfo.sunset*/;
             mountainInfoCardImg.src = "images/" + mountain.img;
             mountainInfoCard.style.display = "block";
             break;
