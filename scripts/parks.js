@@ -16,7 +16,6 @@ function init() {
     locationsList.onchange = parksByLocation;
     parkTypeList.onchange = parksByType;
     parkList.onchange = displayParkInfo;
-    visitBtn.onclick = openLink;
 }
 
 // initializes the location list
