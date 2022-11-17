@@ -22,7 +22,7 @@ The goal of this project was to build a website that helps the user find things 
 
 ### Screenshots
 ![Carousel Screen Shot](images/Screenshot-Of-Carousel-On-Homepage.png)
-![Featurette Screen Shot](images/Screenshot-Of-Featurette-On-Homepage.png)
+![Featurette Screen Shot](images/Screen%20Shot%202022-11-17%20at%203.35.06%20PM.png)
 ![National Parks Search Page Screen Shot](images/Screenshot-Of-Parks-Page.png)
 ![Mountain Information Page Screen Shot](images/Screenshot-Of-Mountain-Page.png)
 
