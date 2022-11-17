@@ -8,17 +8,23 @@ The goal of this project was to build a website that helps the user find things 
 - **Mountains Information Page** - Includes a dropdown list with 48 mountains that the user can select from. Once selected, a photo of the mountain will be displayed along with some information about it.
 
 ## Images
-#### Carousel Images
+### Carousel Images
 ![Park Carousel Image](images/National-Park-Carousel-Image-1024x512.jpeg)
 ![Mountain Carousel Image](images/Mountain-Carousel-Image-1024x512.jpeg)
 
-#### Other Homepage Images
+### Other Homepage Images
 ![Additional Park Image](images/National-Park-Featurette-500x500.jpeg)
 ![Additional Mountain Image](images/Mountain-Featurette-500x500.jpeg)
 
-#### Background Images
+### Background Images
 ![National Parks Search Page Background Image](images/Mountains-But-Will-Use-For-Park-Page.jpeg)
 ![Mountain Information Page Background Image](images/Mountain-Background-Image.jpeg)
+
+### Screenshots
+![Carousel Screen Shot](images/Screenshot-Of-Carousel-On-Homepage.png)
+![Featurette Screen Shot](images/Screenshot-Of-Featurette-On-Homepage.png)
+![National Parks Search Page Screen Shot](images/Screenshot-Of-Parks-Page.png)
+![Mountain Information Page Screen Shot](images/Screenshot-Of-Mountain-Page.png)
 
 ## License
 
