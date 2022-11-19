@@ -161,4 +161,6 @@ function displayParkInfo() {
     }
 }
 
+
+// consider refactoring so that functions have parameters
 // consider using .visually-hidden class instead of style.display.none to hide and unhide elements for acessibilty purposes in the future
