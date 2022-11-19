@@ -30,7 +30,6 @@ async function getSunsetForMountain(lat, lng){
 }
 
 function displayInfo() {
-    // let timeInfo = {};
     mountainInfo.innerHTML = "";
     for (let mountain of mountainsArray) {
         if (mountainsList.value == "select") {
